@@ -1,0 +1,25 @@
+{
+    "name": "MacRoc-LA",
+    "version": "0.0.0",
+    "description": "robot",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "main.blocks",
+        "MacRoc-LA.ts",
+        "main.ts",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
