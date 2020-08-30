@@ -1,4 +1,3 @@
 basic.forever(function () {
-    LA.turn(0)
-    LA.speed(0)
+    LA.rgb([[3, 1, 1], [0, 1, 1]])
 })
