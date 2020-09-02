@@ -2,16 +2,31 @@
  * Provides access to basic micro:bit functionality.
  */
 const COLOR_ARRAY:number[][]=[[0,255,0],[255,0,0],[0,0,255],[255,255,0],[20,220,60],[128,255,64],[0,128,128],[255,255,255],[0,0,0]];
+enum SIDE {
+    //% block="左侧"
+    left = 0,
+    //% block="右侧"
+    right = 1,
+}
 enum COLOR {
-    红色 = 0,
-    绿色 = 1,
-    蓝色 = 2,
-    黄色 = 3,
-    粉色 = 4,
-    橙色 = 5,
-    紫色 = 6,
-    白色 = 7,
-    黑色 = 8,
+    //% block="红色"
+    red = 0,
+    //% block="绿色"
+    green = 1,
+    //% block="蓝色"
+    blue = 2,
+    //% block="黄色"
+    yellow = 3,
+    //% block="粉色"
+    pink = 4,
+    //% block="橙色"
+    orange = 5,
+    //% block="紫色"
+    purple = 6,
+    //% block="白色"
+    white = 7,
+    //% block="黑色"
+    black = 8,
 }
 //% color=#FD7013 weight=20 icon="\uf1b9" block="MacRoc LA"
 namespace LA {
@@ -28,6 +43,12 @@ namespace LA {
         pins.spiFrequency( 9000000 );
         pins.spiFormat( 8, 1 );
         rgb_initialized = true;
+    }
+
+    //% block = "距离 %side"
+    //% inlineInputMode=inline
+    export function distance( side:SIDE ):number{
+        return 1;
     }
     
     //% block="平衡车 速度 %speed|转向 %turn"

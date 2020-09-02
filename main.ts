@@ -1,1 +1,2 @@
-LA.rgb_enum(COLOR.红色, COLOR.绿色)
+LA.rgb_enum(COLOR.red, COLOR.green)
+LA.car(LA.distance(SIDE.left), 0)
