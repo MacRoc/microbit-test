@@ -30,22 +30,13 @@ namespace LA {
         rgb_initialized = true;
     }
     
-    //% block="速度 %speed %turn"
-    //% value.min = -100 value.max = 100
-    export function speed( value:number ):void{ 
+    //% block="平衡车 速度 %speed|转向 %turn"
+    //% speed.min = -100 speed.max = 100 turn.min = -200 turn.max = 200
+    export function car( speed:number, turn:number ):void{ 
         if( !serial_initialized ){
             serial_init();
         }
-        serial.writeString( 's' + value + '#' );
-    }
-
-    //% block="转向 %value"
-    //% value.min = -100 value.max = 100
-    export function turn( value:number ):void{ 
-        if( !serial_initialized ){
-            serial_init();
-        }
-        serial.writeString( 't' + value + '#' );
+        serial.writeString( 'y:' + speed + ' x:' + turn + '#' );
     }
 
     //% block="氛围灯 左侧 %left_color|右侧 %right_color"
@@ -65,7 +56,7 @@ namespace LA {
         }
         for( index_i = 0; index_i < 2; index_i ++ ){
             for( index_j = 0; index_j < 24; index_j ++ ){
-                serial.writeString( ( 1 << ( index_j % 8 ) ).toString() );
+                //serial.writeString( ( 1 << ( index_j % 8 ) ).toString() );
                 if( value[index_i][ index_j / 8 ] && 1 << ( index_j % 8 ) ){
                     temp[ index_i * 24 + index_j ] = 248;
                 }
