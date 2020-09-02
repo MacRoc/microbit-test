@@ -1,3 +1,1 @@
-basic.forever(function () {
-    LA.rgb([[3, 1, 1], [0, 1, 1]])
-})
+LA.rgb_enum(COLOR.红色, COLOR.绿色)
